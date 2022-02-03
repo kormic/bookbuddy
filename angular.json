@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "booklist": "apps/booklist",
+    "booklist-e2e": "apps/booklist-e2e"
+  }
+}

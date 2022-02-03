@@ -1,0 +1,90 @@
+{
+  "projectType": "application",
+  "root": "apps/booklist",
+  "sourceRoot": "apps/booklist/src",
+  "prefix": "booklist",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/booklist",
+        "index": "apps/booklist/src/index.html",
+        "main": "apps/booklist/src/main.ts",
+        "polyfills": "apps/booklist/src/polyfills.ts",
+        "tsConfig": "apps/booklist/tsconfig.app.json",
+        "assets": ["apps/booklist/src/favicon.ico", "apps/booklist/src/assets"],
+        "styles": ["apps/booklist/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/booklist/src/environments/environment.ts",
+              "with": "apps/booklist/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "booklist:build:production"
+        },
+        "development": {
+          "browserTarget": "booklist:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "booklist:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/booklist/src/**/*.ts",
+          "apps/booklist/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/booklist"],
+      "options": {
+        "jestConfig": "apps/booklist/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
