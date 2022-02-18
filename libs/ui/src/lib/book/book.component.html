@@ -1,0 +1,9 @@
+<div class="container" *ngIf="book">
+    <div [ngClass]="{left: true, read: book.read}">
+    {{ book?.id }} - {{ book?.title }}
+    </div>
+    <div>
+        <ng-content>
+        </ng-content>
+    </div>
+</div>

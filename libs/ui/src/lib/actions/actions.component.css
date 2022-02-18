@@ -1,0 +1,16 @@
+.actions-container {
+    position: relative;
+    display: inline-block;
+ }
+
+.actionns-menu-button {
+    
+}
+
+.actions {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 9999;
+}

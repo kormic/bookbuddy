@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-basis: 100%;
+}
+
+.left {
+    flex-grow: 1;
+}
+
+.read {
+    background-color: green;
+    color: white;
+}

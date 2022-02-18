@@ -1,0 +1,10 @@
+<ul >
+    <li *ngFor="let book of books;">
+        <book-buddy-book [book]="book">
+            <book-buddy-actions>
+                <button (click)="onViewBookDetails(book.id)">Details</button>
+                <button (click)="onDeleteBook(book.id)">Delete</button>
+            </book-buddy-actions>
+        </book-buddy-book>  
+    </li>
+</ul>

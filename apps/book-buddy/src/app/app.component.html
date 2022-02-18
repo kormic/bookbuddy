@@ -1,0 +1,12 @@
+<button *ngIf="!isLoggedIn" (click)="login()">Login</button>
+<button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+<h1>{{title | uppercase}}</h1>
+<router-outlet></router-outlet>
+
+
+<!-- TWO WAY BINDING -->
+<!-- <input [ngModel]="counter" (ngModelChange)="counter = $event" /> -->
+<!-- <input type="number" [(ngModel)]="counter" /> -->
+<!-- <button (click)="counter = counter + 1">Increase counter</button>
+<button (click)="counter = counter - 1">Increase counter</button>
+<button (click)="increaseCounter()">Increase through controller</button> -->

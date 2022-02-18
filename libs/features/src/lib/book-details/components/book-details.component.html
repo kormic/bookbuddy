@@ -1,0 +1,9 @@
+<div>
+    <button routerLink="/dashboard">&#60; Go Back</button>
+</div>
+<div>
+    <h3>Title: {{book.title | uppercase}}</h3>
+    <h3>Author: {{book.author}}</h3>
+    <label for="read-checkbox">Mark as read</label>
+    <input name="read-checkbox" #readCheckbox type="checkbox" [checked]="book.read" (change)="setReadStatus()">
+</div>

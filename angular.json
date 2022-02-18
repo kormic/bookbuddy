@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
-    "booklist": "apps/booklist",
-    "booklist-e2e": "apps/booklist-e2e"
+    "book-buddy": "apps/book-buddy",
+    "book-buddy-e2e": "apps/book-buddy-e2e",
+    "data-access": "libs/data-access",
+    "data-models": "libs/data-models",
+    "features": "libs/features",
+    "ui": "libs/ui"
   }
 }

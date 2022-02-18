@@ -1,0 +1,6 @@
+<div class="actions-container" (mouseenter)="menuIsOpen = true" (mouseleave)="menuIsOpen = false">
+    <button class="actions-menu-button">Actions v</button>
+    <div class="actions" *ngIf="menuIsOpen">
+        <ng-content></ng-content>
+    </div>
+</div>

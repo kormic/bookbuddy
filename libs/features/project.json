@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/features",
+  "sourceRoot": "libs/features/src",
+  "prefix": "book-buddy",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/features"],
+      "options": {
+        "jestConfig": "libs/features/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/src/**/*.ts",
+          "libs/features/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

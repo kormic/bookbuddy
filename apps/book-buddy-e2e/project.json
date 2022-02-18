@@ -1,0 +1,28 @@
+{
+  "root": "apps/book-buddy-e2e",
+  "sourceRoot": "apps/book-buddy-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/book-buddy-e2e/cypress.json",
+        "devServerTarget": "book-buddy:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "book-buddy:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/book-buddy-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["book-buddy"]
+}

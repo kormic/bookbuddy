@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@book-buddy/data-access": ["libs/data-access/src/index.ts"],
+      "@book-buddy/data-models": ["libs/data-models/src/index.ts"],
+      "@book-buddy/features": ["libs/features/src/index.ts"],
+      "@book-buddy/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

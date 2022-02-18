@@ -1,5 +1,5 @@
 {
-  "npmScope": "booklist",
+  "npmScope": "book-buddy",
   "affected": {
     "defaultBase": "main"
   },
@@ -45,5 +45,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "booklist"
+  "defaultProject": "book-buddy"
 }

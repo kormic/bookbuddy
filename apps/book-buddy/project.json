@@ -1,0 +1,90 @@
+{
+  "projectType": "application",
+  "root": "apps/book-buddy",
+  "sourceRoot": "apps/book-buddy/src",
+  "prefix": "book-buddy",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/book-buddy",
+        "index": "apps/book-buddy/src/index.html",
+        "main": "apps/book-buddy/src/main.ts",
+        "polyfills": "apps/book-buddy/src/polyfills.ts",
+        "tsConfig": "apps/book-buddy/tsconfig.app.json",
+        "assets": ["apps/book-buddy/src/favicon.ico", "apps/book-buddy/src/assets"],
+        "styles": ["apps/book-buddy/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/book-buddy/src/environments/environment.ts",
+              "with": "apps/book-buddy/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "book-buddy:build:production"
+        },
+        "development": {
+          "browserTarget": "book-buddy:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "book-buddy:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/book-buddy/src/**/*.ts",
+          "apps/book-buddy/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/book-buddy"],
+      "options": {
+        "jestConfig": "apps/book-buddy/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
