@@ -18,6 +18,7 @@
       "@book-buddy/data-access": ["libs/data-access/src/index.ts"],
       "@book-buddy/data-models": ["libs/data-models/src/index.ts"],
       "@book-buddy/features": ["libs/features/src/index.ts"],
+      "@book-buddy/store": ["libs/store/src/index.ts"],
       "@book-buddy/ui": ["libs/ui/src/index.ts"]
     }
   },

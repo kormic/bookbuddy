@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject, catchError, finalize, Observable, of, shareReplay, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, finalize, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

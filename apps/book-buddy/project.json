@@ -13,7 +13,10 @@
         "main": "apps/book-buddy/src/main.ts",
         "polyfills": "apps/book-buddy/src/polyfills.ts",
         "tsConfig": "apps/book-buddy/tsconfig.app.json",
-        "assets": ["apps/book-buddy/src/favicon.ico", "apps/book-buddy/src/assets"],
+        "assets": [
+          "apps/book-buddy/src/favicon.ico",
+          "apps/book-buddy/src/assets"
+        ],
         "styles": ["apps/book-buddy/src/styles.css"],
         "scripts": []
       },
