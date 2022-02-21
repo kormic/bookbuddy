@@ -17,13 +17,17 @@ export class AddBookFormComponent {
     read: false,
   };
 
-  constructor(private store: Store, private router: Router, private booksService: BooksService) {}
+  constructor(
+    private store: Store,
+    private router: Router,
+    private booksService: BooksService
+  ) {}
 
   onSubmit() {
-    const book = { ...this.model, author: this.model.author.split(',')}
-    
+    const book = { ...this.model, author: this.model.author.split(',') };
+
     this.store.dispatch(new AddBook(book));
     // this.booksService.addBook(book)
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/dashboard']);
   }
 }

@@ -13,12 +13,21 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [NgxsModule.forRoot([], { developmentMode: isDevMode() }), BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, UiModule, NotFoundModule],
+  imports: [
+    NgxsModule.forRoot([], { developmentMode: isDevMode() }),
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    UiModule,
+    NotFoundModule,
+  ],
   bootstrap: [AppComponent],
   providers: [
     {
-        provide: 'apiUrl', useValue: environment.API_URL
-    }
-]
+      provide: 'apiUrl',
+      useValue: environment.API_URL,
+    },
+  ],
 })
 export class AppModule {}

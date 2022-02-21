@@ -19,9 +19,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.authService.authStatus$.pipe(takeUntil(this.unsubsribe$)).subscribe((loggedIn) => {
-      this.isLoggedIn = loggedIn;
-    })
+    this.authService.authStatus$
+      .pipe(takeUntil(this.unsubsribe$))
+      .subscribe((loggedIn) => {
+        this.isLoggedIn = loggedIn;
+      });
   }
 
   increaseCounter() {

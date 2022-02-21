@@ -5,11 +5,16 @@ import { BookDetailsComponent } from './components/book-details.component';
 import { BookDetailsResolver } from './resolvers/book-details.resolver';
 
 const routes: Routes = [
-  { path: '', component: BookDetailsComponent, runGuardsAndResolvers: 'always', resolve: { book: BookDetailsResolver }},
+  {
+    path: '',
+    component: BookDetailsComponent,
+    runGuardsAndResolvers: 'always',
+    resolve: { book: BookDetailsResolver },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BooksRoutingModule { }
+export class BooksRoutingModule {}

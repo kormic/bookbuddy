@@ -1,14 +1,14 @@
-<div [ngStyle]="{ 'display': 'flex', 'justify-content': 'space-between' }">
-    <a [style.color]="'red'" routerLink="/random-link">This is an invalid link</a>
-    <button (click)="addBook()">Add a Book</button>
+<div [ngStyle]="{ display: 'flex', 'justify-content': 'space-between' }">
+  <a [style.color]="'red'" routerLink="/random-link">This is an invalid link</a>
+  <button (click)="addBook()">Add a Book</button>
 </div>
-<ng-container *ngIf="books.length > 0; else emptyList;">
-    <book-buddy-bookslist 
-        [books]="books"
-        (deleteBook)="deleteBook($event)"
-        (viewBookDetails)="viewBookDetails($event)"
-    ></book-buddy-bookslist>
+<ng-container *ngIf="books.length > 0; else emptyList">
+  <book-buddy-bookslist
+    [books]="books"
+    (deleteBook)="deleteBook($event)"
+    (viewBookDetails)="viewBookDetails($event)"
+  ></book-buddy-bookslist>
 </ng-container>
 <ng-template #emptyList>
-    <p>No books found. Go ahead and add a book!</p>
+  <p>No books found. Go ahead and add a book!</p>
 </ng-template>

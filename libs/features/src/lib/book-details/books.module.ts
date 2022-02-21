@@ -9,11 +9,6 @@ import { BookDetailsComponent } from './components/book-details.component';
 
 @NgModule({
   declarations: [BookDetailsComponent],
-  imports: [
-    StoreModule,
-    CommonModule,
-    BooksRoutingModule,
-    UiModule,
-  ],
+  imports: [StoreModule, CommonModule, BooksRoutingModule, UiModule],
 })
-export class BooksModule { }
+export class BooksModule {}

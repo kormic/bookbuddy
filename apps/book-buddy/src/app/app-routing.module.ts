@@ -13,17 +13,34 @@ import { NotFoundComponent } from '@book-buddy/features';
 // }
 
 const routes: Routes = [
-  { path: 'dashboard', loadChildren: () => import('@book-buddy/features').then(m => m.DashboardModule) },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('@book-buddy/features').then((m) => m.DashboardModule),
+  },
   // { path: 'book-details', data: { preload: false }, loadChildren: () => import('@book-buddy/features').then(m => m.BooksModule) },
-  { path: 'book-details', loadChildren: () => import('@book-buddy/features').then(m => m.BooksModule) },
-  { path: 'add-book', loadChildren: () => import('@book-buddy/features').then(m => m.AddBookModule) },
+  {
+    path: 'book-details',
+    loadChildren: () =>
+      import('@book-buddy/features').then((m) => m.BooksModule),
+  },
+  {
+    path: 'add-book',
+    loadChildren: () =>
+      import('@book-buddy/features').then((m) => m.AddBookModule),
+  },
   { path: 'not-found', component: NotFoundComponent },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

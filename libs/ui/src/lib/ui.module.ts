@@ -8,6 +8,6 @@ import { ActionsComponent } from './actions/actions.component';
 @NgModule({
   declarations: [BooksListComponent, BookComponent, ActionsComponent],
   imports: [CommonModule],
-  exports: [BooksListComponent]
+  exports: [BooksListComponent],
 })
 export class UiModule {}
