@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthFacade } from '@book-buddy/auth';
 
-import { AuthService } from '@book-buddy/data-access';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -14,21 +14,12 @@ export class AppComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   unsubsribe$ = new Subject<boolean>();
 
-  counter = 0;
-
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authFacade: AuthFacade, private router: Router) {}
 
   ngOnInit() {
-    this.authService.authStatus$.pipe(takeUntil(this.unsubsribe$)).subscribe((loggedIn) => {
-      this.isLoggedIn = loggedIn;
-    })
+    this.authFacade.loggedIn$.pipe(takeUntil(this.unsubsribe$)).subscribe(loggedIn => this.isLoggedIn = loggedIn);
   }
 
-  increaseCounter() {
-    this.counter += 1;
-  }
-
-  // Destroy Subscription
   ngOnDestroy() {
     this.unsubsribe$.next(true);
     this.unsubsribe$.unsubscribe();
@@ -39,11 +30,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   login() {
-    this.authService.login().subscribe();
+    this.authFacade.login();
   }
 
   logout() {
-    this.authService.logout();
+    this.authFacade.logout();
     this.router.navigate(['/dashboard']);
   }
 }

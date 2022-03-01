@@ -1,6 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject, catchError, finalize, Observable, of, shareReplay, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+
+import { User } from '@book-buddy/data-models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class AuthService {
   constructor(@Inject('apiUrl') private endpointUrl: string, private http: HttpClient) { }
 
   login() {
-    return this.http.get(this.endpointUrl + '/users').pipe(tap(console.log), finalize(() => this.authStatusSubject.next(true)), catchError(this.handleError))
+    return this.http.get<User[]>(this.endpointUrl + '/users');
   }
 
   logout() {

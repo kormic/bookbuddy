@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@book-buddy/auth": ["libs/auth/src/index.ts"],
       "@book-buddy/data-access": ["libs/data-access/src/index.ts"],
       "@book-buddy/data-models": ["libs/data-models/src/index.ts"],
       "@book-buddy/features": ["libs/features/src/index.ts"],

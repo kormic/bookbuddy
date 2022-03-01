@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree } from '@angular/router';
+import { AuthFacade } from '@book-buddy/auth';
 import { AuthService } from '@book-buddy/data-access';
 import { map, Observable, take } from 'rxjs';
 
@@ -7,9 +8,9 @@ import { map, Observable, take } from 'rxjs';
   providedIn: 'root'
 })
 export class CanAddBookGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authFacade: AuthFacade, private router: Router) {}
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.authService.authStatus$.pipe(
+      return this.authFacade.loggedIn$.pipe(
         take(1),
         map((isLoggedIn) => {
             if(!isLoggedIn) {
